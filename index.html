@@ -1,176 +1,150 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CifraPay (CPAY) - Token TRC-20 na Rede Tron</title>
-  <meta name="description" content="CifraPay (CPAY) é um token TRC-20 na rede Tron, focado em pagamentos digitais rápidos, taxas baixas e integração com dApps." />
+  <meta charset="UTF-8">
+  <title>CifraPay (CPAY) - Token TRC-20</title>
+
   <style>
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #04151f;
+      background: #042029;
       color: #ffffff;
-      line-height: 1.6;
+      margin: 0;
+      padding: 20px;
     }
     header {
-      background-color: #008b8b;
-      padding: 40px 20px;
       text-align: center;
+      margin-bottom: 30px;
     }
-    header img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      margin-bottom: 20px;
-    }
-    header h1 {
-      margin: 10px 0 5px;
-      font-size: 2rem;
-      letter-spacing: 1px;
-    }
-    header h2 {
-      margin: 0;
-      font-size: 1.1rem;
-      font-weight: normal;
-      opacity: 0.9;
-    }
-    main {
-      max-width: 900px;
-      margin: 30px auto;
-      padding: 0 20px 40px;
-    }
-    section {
-      margin-bottom: 32px;
-      padding-bottom: 20px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-    }
-    section:last-of-type {
-      border-bottom: none;
-    }
-    h3 {
-      margin-top: 0;
-      font-size: 1.3rem;
+    h1, h2, h3 {
       color: #00d0c5;
     }
-    ul {
-      padding-left: 18px;
-    }
-    .highlight-box {
-      background-color: rgba(0, 139, 139, 0.12);
-      border-left: 4px solid #00d0c5;
-      padding: 12px 14px;
-      border-radius: 4px;
-      font-size: 0.95rem;
-    }
-    .contract {
-      font-family: "Courier New", monospace;
-      background-color: #021019;
-      padding: 10px 12px;
-      border-radius: 4px;
-      word-wrap: break-word;
-      font-size: 0.95rem;
+    pre {
+      background: #00151f;
+      padding: 15px;
+      border-radius: 8px;
+      white-space: pre-wrap;
+      overflow-x: auto;
+      color: #00ffaa;
+      font-size: 14px;
     }
     a {
       color: #00d0c5;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    footer {
-      text-align: center;
-      font-size: 0.85rem;
-      padding: 15px 10px 25px;
-      color: rgba(255, 255, 255, 0.6);
     }
   </style>
 </head>
+
 <body>
+
   <header>
-    <img src="cifrapay-logo.png" alt="Logo CifraPay (CPAY)" />
+    <!-- IMPORTANTE: suba o arquivo cifrapay_logo.png no mesmo repositório -->
+    <img src="cifrapay_logo.png" alt="CifraPay Logo" width="220">
     <h1>CifraPay (CPAY)</h1>
     <h2>Token Digital TRC-20 na Rede Tron</h2>
   </header>
 
-  <main>
-    <section id="sobre">
-      <h3>Sobre a CifraPay</h3>
-      <p>
-        A <strong>CifraPay (CPAY)</strong> é um token digital criado na
-        <strong>blockchain Tron</strong>, seguindo o padrão
-        <strong>TRC-20</strong>. O projeto foi desenvolvido para oferecer
-        transferências rápidas, taxas baixas e uma infraestrutura simples e
-        transparente para pagamentos e integrações com aplicações
-        descentralizadas (dApps).
-      </p>
-      <p>
-        O foco da CifraPay é ser um token funcional, direto e eficiente, mantendo
-        a rastreabilidade total das operações na rede pública Tron, sem funções
-        ocultas ou mecanismos que prejudiquem o usuário.
-      </p>
-    </section>
+  <h3>📌 Sobre a CifraPay</h3>
+  <p>
+    A <strong>CifraPay (CPAY)</strong> é um token criado na blockchain Tron usando o padrão
+    <strong>TRC-20</strong>. Rápido, leve e eficiente, ele foi desenvolvido para pagamentos digitais,
+    transferências de baixo custo e uso em aplicações descentralizadas (dApps).
+  </p>
 
-    <section id="caracteristicas">
-      <h3>Características Técnicas</h3>
-      <ul>
-        <li><strong>Nome:</strong> CifraPay</li>
-        <li><strong>Símbolo:</strong> CPAY</li>
-        <li><strong>Padrão:</strong> TRC-20</li>
-        <li><strong>Rede:</strong> Tron Mainnet</li>
-        <li><strong>Decimais:</strong> 6</li>
-        <li><strong>Emissão por operação de mint:</strong> 100.000.000 CPAY</li>
-        <li><strong>Compatibilidade:</strong> TronLink, carteiras e plataformas que suportam tokens TRC-20</li>
-      </ul>
-      <div class="highlight-box">
-        O contrato da CifraPay foi desenvolvido para seguir o padrão TRC-20,
-        sem taxas ocultas e sem funções abusivas. O código é público e pode ser
-        auditado diretamente no Tronscan após a implantação.
-      </div>
-    </section>
+  <h3>📑 Informações do Token</h3>
+  <ul>
+    <li><strong>Nome:</strong> CifraPay</li>
+    <li><strong>Símbolo:</strong> CPAY</li>
+    <li><strong>Decimais:</strong> 6</li>
+    <li><strong>Mint:</strong> 100.000.000 por vez</li>
+    <li><strong>Email oficial:</strong> <a href="mailto:paycifra@gmail.com">paycifra@gmail.com</a></li>
+  </ul>
 
-    <section id="tokenomics">
-      <h3>Tokenomics e Emissão</h3>
-      <p>
-        A CifraPay trabalha com um modelo de emissão controlada. O contrato
-        permite a criação de <strong>100 milhões (100.000.000) de CPAY por vez</strong>,
-        por meio de função de <em>mint</em> específica.
-      </p>
-      <p>
-        Esse modelo de emissão facilita o controle do supply em etapas e permite
-        que o crescimento do projeto seja alinhado com a demanda real de uso
-        do token, mantendo transparência para a comunidade.
-      </p>
-    </section>
+  <h3>💼 Contrato Completo (esse aqui você cola na TRON-IDE)</h3>
 
-    <section id="contrato">
-      <h3>Endereço do Contrato</h3>
-      <p>
-        Após o deploy do contrato na Tron Mainnet, o endereço oficial será
-        divulgado aqui e também verificado no Tronscan.
-      </p>
-      <div class="contract">
-        Endereço do contrato (CPAY):<br />
-        <strong>[INSIRA AQUI O ENDEREÇO DO CONTRATO NA TRON MAINNET]</strong>
-      </div>
-    </section>
+  <pre>// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
 
-    <section id="contato">
-      <h3>Contato Oficial</h3>
-      <p>
-        Para dúvidas, parcerias ou informações sobre a CifraPay (CPAY), entre
-        em contato:
-      </p>
-      <p>
-        <strong>E-mail:</strong>
-        <a href="mailto:paycifra@gmail.com">paycifra@gmail.com</a>
-      </p>
-    </section>
-  </main>
+contract CifraPay {
+    string public name = "CifraPay";
+    string public symbol = "CPAY";
+    uint8 public decimals = 6;
+    uint256 public totalSupply;
+    address public owner;
+    uint256 public constant MINT_AMOUNT = 100_000_000 * (10 ** 6);
+    mapping(address => uint256) public balanceOf;
+    mapping(address => mapping(address, uint256)) public allowance;
 
-  <footer>
-    <p>CifraPay (CPAY) - Token TRC-20 na rede Tron.</p>
-    <p>As informações deste site não constituem oferta de investimento.</p>
-  </footer>
+    event Transfer(address indexed from, address indexed to, uint256 value);
+    event Approval(address indexed owner, address indexed spender, uint256 value);
+    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
+
+    modifier onlyOwner() {
+        require(msg.sender == owner, "Not owner");
+        _;
+    }
+
+    constructor() {
+        owner = msg.sender;
+        emit OwnershipTransferred(address(0), owner);
+    }
+
+    function transfer(address _to, uint256 _value) external returns (bool) {
+        _transfer(msg.sender, _to, _value);
+        return true;
+    }
+
+    function approve(address _spender, uint256 _value) external returns (bool) {
+        allowance[msg.sender][_spender] = _value;
+        emit Approval(msg.sender, _spender, _value);
+        return true;
+    }
+
+    function transferFrom(address _from, address _to, uint256 _value) external returns (bool) {
+        uint256 currentAllowance = allowance[_from][msg.sender];
+        require(currentAllowance >= _value, "Allowance exceeded");
+        allowance[_from][msg.sender] = currentAllowance - _value;
+        _transfer(_from, _to, _value);
+        return true;
+    }
+
+    function _transfer(address _from, address _to, uint256 _value) internal {
+        require(_to != address(0), "Invalid address");
+        require(balanceOf[_from] >= _value, "Insufficient balance");
+
+        balanceOf[_from] -= _value;
+        balanceOf[_to] += _value;
+
+        emit Transfer(_from, _to, _value);
+    }
+
+    // Mint fixo de 100.000.000 CPAY por chamada
+    function mint100M(address _to) external onlyOwner returns (bool) {
+        require(_to != address(0), "Invalid address");
+
+        uint256 amount = MINT_AMOUNT;
+
+        totalSupply += amount;
+        balanceOf[_to] += amount;
+
+        emit Transfer(address(0), _to, amount);
+        return true;
+    }
+
+    function transferOwnership(address newOwner) external onlyOwner {
+        require(newOwner != address(0), "Invalid owner");
+        emit OwnershipTransferred(owner, newOwner);
+        owner = newOwner;
+    }
+
+    function renounceOwnership() external onlyOwner {
+        emit OwnershipTransferred(owner, address(0));
+        owner = address(0);
+    }
+}</pre>
+
+  <h3>🔗 Endereço do Contrato na Tron Mainnet</h3>
+  <p><strong>COLE AQUI APÓS O DEPLOY:</strong></p>
+  <pre>[ADICIONE O ENDEREÇO REAL DO CONTRATO AQUI]</pre>
+
 </body>
 </html>
