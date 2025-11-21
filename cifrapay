@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>CifraPay (CPAY) - Token TRC-20</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #042029;
+  color: #ffffff;
+  margin: 0;
+  padding: 20px;
+}
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+h1, h2, h3 {
+  color: #00d0c5;
+}
+pre {
+  background: #00151f;
+  padding: 15px;
+  border-radius: 8px;
+  white-space: pre-wrap;
+  overflow-x: auto;
+  color: #00ffaa;
+  font-size: 14px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA..." alt="CifraPay Logo" width="220">
+  <h1>CifraPay (CPAY)</h1>
+  <h2>Token Digital TRC-20 na Rede Tron</h2>
+</header>
+
+<h3>📌 Sobre a CifraPay</h3>
+<p>
+A <strong>CifraPay (CPAY)</strong> é um token criado na blockchain Tron usando o padrão TRC-20.
+Rápido, leve e eficiente, ele foi desenvolvido para pagamentos digitais, transferências de baixo custo
+e uso em dApps.
+</p>
+
+<h3>📑 Informações do Token</h3>
+<ul>
+  <li><strong>Nome:</strong> CifraPay</li>
+  <li><strong>Símbolo:</strong> CPAY</li>
+  <li><strong>Decimais:</strong> 6</li>
+  <li><strong>Mint:</strong> 100.000.000 por vez</li>
+  <li><strong>Email oficial:</strong> paycifra@gmail.com</li>
+</ul>
+
+<h3>💼 Contrato Completo (Cole este contrato na TRON-IDE)</h3>
+
+<pre>
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract CifraPay {
+    string public name = "CifraPay";
+    string public symbol = "CPAY";
+    uint8 public decimals = 6;
+    uint256 public totalSupply;
+    address public owner;
+    uint256 public constant MINT_AMOUNT = 100_000_000 * (10 ** 6);
+    mapping(address => uint256) public balanceOf;
+    mapping(address => mapping(address, uint256)) public allowance;
+
+    event Transfer(address indexed from, address indexed to, uint256 value);
+    event Approval(address indexed owner, address indexed spender, uint256 value);
+    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
+
+    modifier onlyOwner() {
+        require(msg.sender == owner, "Not owner");
+        _;
+    }
+
+    constructor() {
+        owner = msg.sender;
+        emit OwnershipTransferred(address(0), owner);
+    }
+
+    function transfer(address _to, uint256 _value) external returns (bool) {
+        _transfer(msg.sender, _to, _value);
+        return true;
+    }
+
+    function approve(address _spender, uint256 _value) external returns (bool) {
+        allowance[msg.sender][_spender] = _value;
+        emit Approval(msg.sender, _spender, _value);
+        return true;
+    }
+
+    function transferFrom(address _from, address _to, uint256 _value) external returns (bool) {
+        uint256 currentAllowance = allowance[_from][msg.sender];
+        require(currentAllowance >= _value, "Allowance exceeded");
+        allowance[_from][msg.sender] = currentAllowance - _value;
+        _transfer(_from, _to, _value);
+        return true;
+    }
+
+    function _transfer(address _from, address _to, uint256 _value) internal {
+        require(_to != address(0), "Invalid address");
+        require(balanceOf[_from] >= _value, "Insufficient balance");
+        balanceOf[_from] -= _value;
+        balanceOf[_to] += _value;
+        emit Transfer(_from, _to, _value);
+    }
+
+    function mint100M(address _to) external onlyOwner returns (bool) {
+        require(_to != address(0), "Invalid address");
+        uint256 amount = MINT_AMOUNT;
+        totalSupply += amount;
+        balanceOf[_to] += amount;
+        emit Transfer(address(0), _to, amount);
+        return true;
+    }
+
+    function transferOwnership(address newOwner) external onlyOwner {
+        require(newOwner != address(0), "Invalid owner");
+        emit OwnershipTransferred(owner, newOwner);
+        owner = newOwner;
+    }
+
+    function renounceOwnership() external onlyOwner {
+        emit OwnershipTransferred(owner, address(0));
+        owner = address(0);
+    }
+}
+</pre>
+
+<h3>🔗 Endereço do Contrato na Tron Mainnet</h3>
+<p><strong>COLE AQUI APÓS O DEPLOY:</strong></p>
+<pre>[ADICIONE O ENDEREÇO REAL DO CONTRATO AQUI]</pre>
+
+</body>
+</html>
